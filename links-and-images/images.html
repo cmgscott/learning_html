@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- This follows the tutorial from interneting is hard -->
+<!-- + img is the tag, src is the attribute, it gets more complicated than this but these are the basics
+     + main image formats for the web are: jpg, gif, png, svg
+     + pixel-based image formats need to be twice as big as you want them to appear on retina displays
+     + using alt attribute in img is best practice (refer: https://html.spec.whatwg.org/multipage/images.html#alt)
+     + -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Images</title>
+    </head>
+    <body>
+        <h1>Images</h1>
+        <p>This page covers common image formats, but you may also be looking for <a href='links.html'>links</a>
+           and <a href='misc/extras.html'>useful extras</a>.</p>
+
+        <h2>JPGs</h2>
+        <p>JPG images are good for photos and images with lots of gradients in them because they are designed for
+            handling large color palettes without increasing file size too much. CON: they don't allow for transparent
+            pixels</p>
+        <img src='images/mochi.jpg' width='75' alt='A mochi ball in a bubble'/> <!-- usually better to adjust width in
+                                                                                      CSS, alt affects search engines
+                                                                                      and users with text-only
+                                                                                      browsers -->
+
+        <h2>GIFs</h2>
+        <p>GIFs are somewhat limited in terms of color palette, and transparency is binary (off/on).</p>
+        <img src='images/mochi.gif' width='75' alt='A dancing mochi ball'/> <!-- dimensions are in pixels -->
+
+        <h2>PNGs</h2>
+        <p>PNGs are good for everything that's not a photo or animated, and they deal with opacity fine and don't have
+            color palette limitations. Good for icons, tech diagrams, logos, etc.</p>
+        <img src='images/mochi.png' width='75' alt='A mochi ball'/> <!-- setting only width or only height scales the
+                                                                         image, setting both with stretch the image -->
+
+        <h2>SVGs</h2>
+        <p>SVG is vector-based format, scales up or down to any dimension without loss of quality. CON: must convert
+            all text fields to outlines using image editor. Good for responsive design, same uses as PNGs (use them
+            whenever you can).</p>
+        <img src='images/mochi.svg' alt='A mochi ball with Bezier handles'/>
+
+        <p></p>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- this is a doc from chapter 3 of interneting is hard -->
+<!-- + URL = uniform resource locators
+       -> there are different types of URLs, like root-relative, relative, and absolute
+     + scheme = http:// or https:// are examples -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> <!-- universal alphabet for the internet -->
+        <title>Links</title>
+    </head>
+    <body>
+        <h1>Links</h1>
+        <p>This example is about links and <a href='images.html'>images</a>.</p> <!-- <a> is for anchor, href is an
+                                                                                      attribute -->
+        <p>Links are here. There are three kinds of links:</p>
+
+        <ul>
+            <li>Absolute links, like to <!-- modify a href with target after domain and path and stuff to determine
+                                             behavior when clicked (e.g. open in new tab) -->
+                <a href='https://developer.mozilla.org/en-US/docs/Web/HTML' target='_blank'>Mozilla Developer Network
+                </a>, which is a very good resource for web developers.</li> <!-- don't use these to point to your
+                                                                                  own pages! -->
+            <li>Relative links, like to <a href='misc/extras.html'>extras page</a></li> <!-- only need relative path -->
+            <li>And root-relative links, which can't be demonstrated due to the local file usage</li>
+        </ul>
+        <p></p>
+    </body>
+</html>
