@@ -1,0 +1,63 @@
+/* created following tutorial from interenting is hard */
+/* a css "rule" is always start with a selector that defines which HTML elements it applies to (e.g. "body").
+   next is the declarations block inside the curly braces, where properties are set.
+   always terminate lines with ";"
+
+   There's a lot of units available, most common are px and em (pronounced like the letter m), which is the font size
+     this is useful for defining sizes relative to some base font
+     for reference size "units of measurement": https://internetingishard.com/html-and-css/hello-css/
+   copying and pasting code is usually a bad idea for web developers
+
+   called cascade because css code can be put in lotsa places, e.g.:
+       the browser's default stylesheet
+       user-defined stylesheets
+       external stylesheets (that's us) (best place to define the appearance)
+       page-specific styles (that's also us)
+       inline styles (that could be us but it never should be)
+   in highest precedence order, so inline styles override all previous ones
+ */
+body {
+    color: #414141; /* text color to dark grey */
+    background-color: #EEEEEE; /* background to light grey */
+    /* font-size: 18px; */ /* this would set font size base to 18px */
+}
+
+h1 { /* selecting different elements */
+    font-size: 36px; /* this time you specify px (unlike image size) */
+    /* font-size: 2em; */ /* this says h1 element should be twice the size of 18px (base size) */
+}
+
+h2 {
+    font-size: 28px;
+    /* font-size: 1.6em; */ /* this says h2 element should be 1.6 times bigger */
+}
+
+/* adding style to set of elements */
+h1, h2, h3, h4, h5, h6 {
+     font-family: "Helvetica", "Arial", sans-serif; /* accepts multiple values incase users do not have the same stuff
+                                                       installed, browser tries from left to right
+                                                       more on web typography referenced:
+                                                       https://internetingishard.com/html-and-css/web-typography/ */
+    font-weight: normal; /* defines the boldness of the text, font-style indicates whether it's italicized or not */
+ }
+
+ /* can create custom bullets for li elements with the list-style-image property:
+ https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image */
+ ul {
+     list-style-type: circle; /* list-style-type property alters bullet icon used for <li>, typically defined on the
+                                 parent ul or ol element as done here */
+ }
+
+ ol {
+     list-style-type: lower-roman; /* none is a list-style-type, allows the menu's list items to be styled more like
+                                      buttons */
+ }
+
+ a {
+     text-decoration: none; /* removes default underline from link */
+ }
+
+ p {
+     text-align: left; /* obviously left-aligns text, but this does it for the whole web page (probably not what you
+                          want */
+ }

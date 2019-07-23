@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Dummy</title>
+        <link rel='stylesheet' href='styles.css'/> <!-- link element is how browsers know they need to load css when
+                                                        hey try to render the page
+                                                        can add more rows of <link rel.../>, but order matters
+                                                        stylesheets that come later will override styles in earlier ones
+                                                        so put base first then supplement with section-specific
+                                                        stylesheets -->
+        <style> /* add css to page always in head, this is page-specific
+                   This is difficult to maintain, you'd have to copy and paste if you want to copy style to another
+                   page, then tracking down redundancy later is harder than editing a single css file */
+            body {
+                color:#0000FF; /* body to blue */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Dummy</h1>
+
+        <p>This is a dummy page that helps us demonstrate reusable CSS
+           stylesheets. <a href='hello-css.html'>Go back</a>.</p>
+
+        <!-- below is an in-line css example, overriding it is impossible, and going through every page to update every
+             element is not good -->
+        <p>Want to try crossing out an <a href='nowhere.html'
+                                          style='color: #990000; text-decoration: line-through;'>obsolete link</a>?
+            This is your chance!</p>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- this is created from chapter 3 of tutorial interneting is hard -->
+<!-- HTML is the glue that holds everything together (reference css from inside html to load it -->
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Hello, CSS</title>
+        <link rel='stylesheet' href='styles.css'/> <!-- link element is how browsers know they need to load css when
+                                                        hey try to render the page, link is like <a> but it's only meant
+                                                        to be used inside of <head>, it connects to metadata that's
+                                                        defined outside of the current document, and it's and empty
+                                                        element
+                                                        REL defines the relationship between the resource and the HTML
+                                                        document, for other options refer to:
+                                                        https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types -->
+    </head>
+    <body>
+        <h1>Hello, CSS</h1>
+
+        <p>CSS lets us style HTML elements. There’s also
+          <a href='dummy.html'>another page</a> associated with this example.</p>
+
+        <h2>List Styles</h2>
+
+        <p>You can style unordered lists with the following bullets:</p>
+
+        <ul>
+            <li>disc</li>
+            <li>circle</li>
+            <li>square</li>
+        </ul>
+
+        <p>And you can number ordered lists with the following:</p>
+
+        <ol>
+            <li>decimal</li>
+            <li>lower-roman</li>
+            <li>upper-roman</li>
+            <li>lower-alpha</li>
+            <li>upper-alpha</li>
+            <li>(and many more!)</li>
+        </ol>
+    </body>
+</html>
