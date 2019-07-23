@@ -1,0 +1,47 @@
+<!DOCTYPE html> <!-- tell browsers that this is an html web page -->
+<!-- This is following the free tutorial from https://internetingishard.com/html-and-css/ -->
+<!-- + block-level elements (flow content) are things like paragraphs and headers, while inline elements (phrasing
+       content) are things like bold or italic text
+     + html should provide semantic information about your content, not presentational information -->
+<html> <!-- need to wrap entire web page with html tags, creates html object or "element" -->
+    <head> <!-- contains all of the metadata like page title, CSS stylesheets, and other page rendering things -->
+        <title>My First Web Page From Scratch</title> <!-- displayed on browser tab and in google search results -->
+    </head>
+    <body> <!-- contains headings, paragraphs, and other things to be displayed -->
+        <h1>Heading 1</h1> <!-- headings are titles that are displayed, the higher the number,
+                                the less prominent the heading -->
+        <p>Displaying a paragraph.</p>
+
+        <h2>Heading 2</h2>
+        <p>Displaying a paragraph with heading 2.</p> <!-- headings are important for seo -->
+
+        <h2>Lists</h2>
+        <p>An unordered list.</p>
+        <ul> <!-- This is the tag for an unordered list, can only contain <li> elements
+                  Good for intentories, product features, pro/con comparisons, and navigational menus -->
+            <li>Item</li> <!-- and this is the tag for a list element -->
+            <li>Object</li>
+            <li>Thing</li>
+            <li><p>The correct way to include a paragraph in a list element.</p></li>
+        </ul>
+        <p>An ordered list.</p>
+        <ol> <!-- ordered lists good for recipes, instructions, tables of contents -->
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+
+        <h2>Inline elements</h2> <!-- <em> for emphasis, <strong> for... strong -->
+        <p>As an example, <em>italicized</em> text. Or maybe <strong>bold</strong> is more appropriate.</p>
+
+        <h2>Empty elements</h2> <!-- the final / is optional, but including it makes it clear that it is a self-closing
+                                     element -->
+        <p>Line breaks are <br/> <!-- do not spam these to add lots of space! That will be decided in CSS code -->
+        easy.</p>
+
+        <p>Now for a thematic break.</p>
+        <hr/> <!-- can be personalized/edited in css later, don't use it to add a line, use css to add that line
+                   is less important than a header, but more important than a new paragraph -->
+        <p>Did you see it?</p>
+    </body>
+</html>
