@@ -1,0 +1,117 @@
+/* this was created following tutorial at interneting is hard */
+/* + adding an order property to a flex item defines its order in the container without affecting surrounding items
+     -> default value is 0, increasing moves items to the right, decreasing to the left
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-container {
+    /*color: #fff;*/
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+    display: flex; /* turns element into flex container, telling browser that everything in the box should be rendered
+                      with flexbox instead of the default box model MUST BE INCLUDED */
+    justify-content: center; /* defines the horizontal alignment of its items, other choices are: flex-start,
+                                flex-end, space-around, space-between */
+
+}
+
+.menu {
+    /*border: 1px solid #fff;  !* For debugging *!*/
+    width: 900px;
+    display: flex;
+    justify-content: space-around; /* space-between is  similar but only adds space in between not on the outsides */
+}
+
+/*.signup {*/
+    /*margin-left: auto; !* auto-margins eat up all the extra space in a flex container, so instead of distributing items*/
+                          /*equally, this moves the .signup and any following items (.login) to the right side of the */
+                          /*container *!*/
+/*}*/
+
+.links {
+    /*border: 1px solid #fff;*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login {
+    margin-left: 20px;
+}
+
+.header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 900px;
+    height: 300px; /* specific height means items can be positioned vertically inside of it (cross-axis alignment) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* adds vertical organizing the way justify-content adds horizontal, options are the same */
+}
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* wraps if content goes off screen */
+    /*flex-direction: column; !* changes from row to column layout, also rotates the direction of a container*/
+                               /*(justify-content gets rotated), it refers to container's vertical alignment, not its*/
+                               /*horizontal alignment *!*/
+    /*flex-direction: row-reverse; !* only swaps the order on a per-row basis *!*/
+    flex-direction: row;
+    align-items: center; /* this is needed to center the column horizontally */
+}
+/* switches first and last item */
+.first-item {
+    order: 1;
+}
+
+.last-item {
+    order: -1;
+}
+/* end switching code */
+
+.photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+}
+
+.social,
+.subscribe {
+    align-self: flex-end; /* align-self overrides the align-items value from its container for a flex item */
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1; /* tells the items to stretch to match the width of .footer */
+}
+
+.footer-one,
+.footer-three {
+    /*flex: 2; !* tells footer three to grow 2x as much as other items *!*/
+    background-color: #5995DA;
+    flex: initial; /* without this, flex: 1 would be inherited from the .footer-item rule */
+    width: 300px;
+}

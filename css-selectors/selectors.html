@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- this is created from following interenting is hard tutorials -->
+<!-- + classes can be defined on any html element
+     + wrapping html elements in <div> tags is good for organizing a site into larger layout-oriented chunks without
+       messing up how search engines view the content
+     + id selectors are more stringent alternative to class selectors - they work the same way but you can only
+       have one element with the same ID per page (can't reuse styles). this is because they serve as the target for
+       "URL fragments" -> how you point the user to a specific part of a web page e.g. google.com/page.html#button1
+     + ID SELECTORS ARE GENERALLY FROWNED UPON-->
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>CSS Selectors</title>
+        <link rel='stylesheet' href='styles.css'/>
+    </head>
+    <body>
+        <div class='page'> <!-- wrap entire doc in div container -->
+            <h1>CSS Selectors</h1>
+
+            <!-- example of adding class attribute to specific type of paragraph -->
+            <p class='synopsis'>CSS selectors let you <em>select</em> individual HTML elements in an HTML
+                document. This is <strong>super</strong> useful.</p>
+
+            <p>Classes are ridiculously important, since they allow you to select
+                arbitrary boxes in your web pages.</p>
+
+            <p>We’ll also be talking about links in this example, so here’s
+                <a href='https://internetingishard.com'>Interneting Is Hard</a> for us to
+                style.</p>
+
+            <a class='button' href='nowhere.html'>Button One</a>
+            <a id='button-2' class='button call-to-action' href='nowhere.html'>Button Two</a> <!-- can add multiple
+                                                                                                   classes to single
+                                                                                                   element precedence is
+                                                                                                   from right to left
+                                                                                                   because of the order
+                                                                                                   of these style
+                                                                                                   elements in the css
+                                                                                                   document -->
+        </div>
+    </body>
+</html>

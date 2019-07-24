@@ -1,0 +1,145 @@
+/* this was created by following tutorial at interenting is hard */
+
+/* + pseudo-classes add style to the states of the content, like a class selectors that's built into the browser
+     common link pseudo-classes are:
+         -> :link - a link the user has never visited
+         -> :visited - a link the user has visited before
+         -> :hover - a link with the user's mouse over it
+         -> :active - a link that's being pressed down by a mouse or finger
+     + pseudo-classes can be applied to any kind of selector (not just type)
+     + :first-of-type and :last-of-type selectors only operate inside their parent element (e.g. p:first-of-type
+       selects the first <p> in every container element)
+       -> would need to do something like use child selectors, or ".page > p:first-of-type"
+     + all things being equal, rules are applied from top-to-bottom, but not all css selectors are created equal
+       -> css specificity is the weight given to different categories of selectors (certain selectors will always
+          override other ones
+          -> specificity of selectors we've seen in order from greatest to least:
+              #button-2
+              .button:link
+              a:link and .synopsis em
+              .button
+              a */
+
+/* here is how we define <p class='synopsis' from the html
+   the dot (.) distinguishes class selectors from the type selectors that we've been working with
+   standard for classes is to use all lowercase and hyphens for spaces */
+.synopsis {
+    color: #7E8184;
+    font-style: italic;
+}
+/* alternatively replacing .synopsis rule with
+       p:first-of-type {
+          color: #7E8184;
+          font-style: italic;
+      }
+   will result in the exact same page
+ */
+
+/* descendant selectors let you target only those elements that are inside of another element */
+.synopsis em {
+    font-style: normal;
+}
+
+/* descendant selectors can be combined with any other goup of selectors, e.g. */
+h1 em {
+    /* some style */
+}
+
+/* related: https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator
+   child combinator can be placed between two CSS selectors, it matches only those elements matched by the second
+   selector
+*/
+
+.button:link, /* this is more specific than current .call-to-action rule so it takes precedence */
+.button:visited {
+    display: block;
+    text-decoration: none;
+
+    color: #FFF;
+    background-color: #5995DA;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;
+    border-radius: 5px;
+
+    width: 200px;
+    margin: 20px auto;
+}
+
+.button:hover,
+.button:visited:hover {
+    color: #FFF;
+    background-color: #76AEED;  /* Light blue */
+}
+
+.button:active,
+.button:visited:active {
+    color: #FFF;
+    background-color: #5995DA;  /* Blue */
+}
+
+/* call to action being here decides overriding precedence in element, furthest down overrides next up */
+/*.call-to-action {*/
+    /*font-style: italic;*/
+    /*background-color: #EEB75A;*/
+/*}*/
+/* corrected .call-to-action by adding pseudo-classes to the original rule */
+.call-to-action:link,
+.call-to-action:visited {
+    font-style: italic;
+    background-color: #EEB75A;     /* Yellow */
+}
+
+.call-to-action:hover,
+.call-to-action:visited:hover {
+    background-color: #F5CF8E;     /* Light yellow */
+}
+
+.call-to-action:active,
+.call-to-action:visited:active {
+    background-color: #EEB75A;     /* Yellow */
+}
+
+/* now no matter how the window is resized the web page will always be 600 pixels wide and centered in the available
+   space */
+.page {
+    width: 600px;
+    margin: 0 auto;
+}
+
+/* pseudo-class examples */
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+a:visited {
+    color: purple;
+}
+a:hover {
+    color: aqua;
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+
+/* adding a:visited:hover removed the behavior for a:active, so this is how to make it turn red still */
+a:visited:active {
+    color: red;
+}
+
+/* chain pseudo-classes together for more specific behavior control */
+a:visited:hover {
+    color: orange;
+}
+
+/* example of using pseudo-class for extra information about elements surroundings */
+p:last-of-type {
+    margin-bottom: 50px; /* makes it so you don't have to make a whole new class for it */
+}
+
+/* for id selectors "#" is used instead of "." */
+#button-2 {
+    color: #5D6063;
+}
