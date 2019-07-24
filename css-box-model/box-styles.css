@@ -1,0 +1,87 @@
+/* created from tutorial from interneting is hard */
+/* + css box model gives each box four properties:
+        -> content: the text, image, or other media content in the element (defined in HTML)
+        -> padding: the space between the box's content and its border (defined in css)
+        -> border: the line between the box's padding and margin (defined in css)
+        -> margin: the space between the box and surrounding boxes (defined in css)
+   + choosing between using margin or padding to do something:
+       -> padding of a box has a background, while margins are always transparent
+       -> padding is included in the click area of an element, while margins aren't
+       -> margins collapse vertically, while padding doesn't
+       -> if that doesn't help, just pick one!
+   + inline boxes completelly ignore the top and bottom margins of an element, and using padding will alter the box but
+     not elements surrounding the box (to play with the vertical spacce of a page, you must be working with block-level
+     elements DON'T FORGET YOU CAN CHANGE INLINE TO BOX USING display: BOX TYPE)
+   + when you have two boxes with vertical margins sitting right next to each other, they will collapse; the margins
+     don't add up together, only the bigger one is displayed. TO PREVENT THIS add an invisible element between them
+     (e.g. <div style='padding-top: 1px'></div>)
+   + only consecutive elements can collapse into each other
+   + padding doesn't ever collapse
+   + "flexbox" layout scheme doesn't have collapsing margins, but it isn't an issue for modern websites
+   + css width and height properties take precedence over the default size of a box's content
+   + three methods for horizontally aligning block-level elements: auto-margins for center alignment, floats for
+      left/right alignment, and flexbox for complete control over alignment
+ */
+
+* { /* this selector matches every HTML element, effectively resetting the margin and padding properties for the web
+       page instead of the browser defaults */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* changing these three settings is always a good idea to do */
+}
+
+h1, p {
+    background-color: #DDE0E3;
+}
+
+em, strong {
+    background-color: #B2D6FF;
+    display: inline; /* can also be set to "block" */
+}
+
+h1 {
+    padding: 50px; /* adds 50 pixels to each side of h1, background color expands to fill up this space */
+}
+
+p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* alternatively, can use padding: 20px 10px in this situation, or padding: verticalpx horizontalpx */
+    /* alt alternatively, use format padding: toppx rightpx bottompx leftpx */
+    margin-bottom: 50px; /* can use same shorthand as padding */
+}
+
+h1 {
+    padding: 50px;
+    border-bottom: 1px solid #5D6063; /* the format is border:size style color; like padding can specify bottom, top,
+                                         etc.
+                                         adding boxes to debug box rendering is a good idea, use border: 1px solid red;
+                                         */
+}
+
+div {
+    color: #FFF;
+    background-color: #5995DA;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;
+    border-radius: 5px;
+    width: 200px; /* if the text is longer than one line, it will wrap to next line and the element will expand
+                     vertically; this can be controlled with either white-space:
+                     https://developer.mozilla.org/en-US/docs/Web/CSS/white-space or
+                     overflow: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
+                  /* width and height only define the size of a box's content. its padding and border are both added on
+                     top of whatever explicit dimensions you set. This is changed with box-sizing property */
+    box-sizing: border-box; /* forces actual width of the box to be 200px including padding and borders */
+                            /* considered to be best practice for all boxes */
+    margin: 20px auto; /* setting the left and right margin of a block-level element to auto will center the block in
+                          its parent element, must have explicit width defined on element */
+}
+
+body {
+    text-align: center; /* does not affect boxes, just the content of the boxes */
+}
