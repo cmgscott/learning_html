@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1200px; /* lets the screen scroll even though the elements do not fill it */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.example {
+    display: flex;
+    justify-content: space-around;
+
+    width: 800px;
+    margin: 50px 0;
+    background-color: #D6E9FE;
+}
+
+.item img {
+    display: block;
+}
+
+.item-relative {
+    position: relative;
+    /* top, left, bottom, right accept negative values */
+    top: 30px; /* top and left define how far it's offset from its static position, kind of like setting (x, y) */
+    left: 30px /* measures from the original box's top and left edges */
+}
+
+.absolute {
+    position: relative;
+}
+
+.item-absolute {
+    position: absolute; /* completely removes an element from the normal flow of the page, like the item doesn't even]
+                           exist to its parent and surrounding elements (space won't be reserved where item should be */
+    top: 10px;
+    left: 10px;
+}
+
+/* fixed positioning good for navigation bars */
+.item-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

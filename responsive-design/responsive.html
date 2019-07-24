@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- this was created following the tutorial at interneting is hard -->
+<!-- + responsive design means the website displays equally well in everything from widescreen monitors to mobile phones
+     + this is accomplished through css media queries
+       -> media queries lets html content be distinct css layouts, so the same website can be displayed as needed
+     + for reference an article on responsive web design patterns to help determine how to collapse
+       desktop->tablet->mobile: https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns?hl=en
+     + a FLUID layout stretches and shrinks to fill the width of the screen, a FIXED-WIDTH layout has the same width
+       regardless of the screen dimensions (fluid is typically for mobile, fixed for desktop
+     + it's a good idea to start with the mobile layout and work your way up to the desktop version-->
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <!-- add viewport to all sites to make it so mobile phones won't use desktop version -->
+        <meta name='viewport'
+              content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+        <title>Responsive Design</title>
+        <link rel='stylesheet' href='styles.css'/>
+    </head>
+    <body>
+        <div class='page'>
+            <div class='section menu'></div>
+            <div class='section header'>
+                <img src='images/header.svg'/>
+            </div>
+            <div class='section content'>
+                <img src='images/content.svg'/>
+            </div>
+            <div class='section sign-up'>
+                <img src='images/sign-up.svg'/>
+            </div>
+            <div class='section feature-1'>
+                <img src='images/feature.svg'/>
+            </div>
+            <div class='section feature-2'>
+                <img src='images/feature.svg'/>
+            </div>
+            <div class='section feature-3'>
+                <img src='images/feature.svg'/>
+            </div>
+        </div>
+    </body>
+</html>

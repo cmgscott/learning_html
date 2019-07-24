@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1200px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #5D6063;
+}
+
+a:link,
+a:visited {
+    color: #5D6063;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 50px;
+    background: #D6E9FE;
+}
+
+.menu {
+    margin-top: 15px;
+}
+
+.menu > li { /* only want list items inside of .menu */
+    display: inline; /* makes non dropdown menu items in row order */
+    margin-right: 50px;
+}
+
+.menu > li:last-of-type {
+    margin-right: 0; /* removes margin from final <li> with pseudo-class last-of-type */
+}
+
+.features-menu {
+    display: none; /* hides the menu init */
+}
+
+/* add hover behavior so menu shows up when hovering */
+.dropdown:hover .features-menu {
+    display: flex;
+    flex-direction: column;
+    background: #B2D6FF;
+    border-radius: 5px;
+    padding-top: 60px;
+
+    /* these make it not interact with other top-level menu items */
+    position: absolute;
+    top: -25px;
+    left: -30px;
+}
+
+.features-menu li {
+    list-style: none;
+    border-bottom: 1px solid #FFF;
+
+    padding: 0 40px 10px 20px;
+    margin: 10px;
+}
+
+.features-menu li:last-of-type {
+    border-bottom: none;
+    z-index: 1;
+}
+
+.dropdown {
+    position: relative; /* since this is the class the submenu resides in, making this relative makes the submenu
+                           behave relative to this item and not the browser window */
+}
+
+.dropdown > span {
+    z-index: 2;
+    position: relative; /* this is required because only positioned elements pay attention to their z-index property */
+    cursor: pointer; /* changes cursor to a pointer instead of a text highlighter when over the element */
+}
