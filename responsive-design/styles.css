@@ -49,6 +49,23 @@
     background-color: #C8C6FA;
 }
 
+/* tells chrome to always file the width of its container */
+.illustration {
+    width: 100%;
+    display: block;
+}
+
+.header {
+    height: auto;
+    justify-content: inherit;
+    align-items: inherit;
+}
+
+.photo img {
+    width: 100%;
+    display: block;
+}
+
 /* media queries always begin with the @media at-rule followed by some kind of contidional statement, the curly
 braces. the format is @media media-type and media-feature { css rules }
  only screen means only applied to devices with screens, not when doc is for print e.g.

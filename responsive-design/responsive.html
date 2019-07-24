@@ -7,7 +7,13 @@
        desktop->tablet->mobile: https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns?hl=en
      + a FLUID layout stretches and shrinks to fill the width of the screen, a FIXED-WIDTH layout has the same width
        regardless of the screen dimensions (fluid is typically for mobile, fixed for desktop
-     + it's a good idea to start with the mobile layout and work your way up to the desktop version-->
+     + it's a good idea to start with the mobile layout and work your way up to the desktop version
+     + to display images there are three things to consider: the device dimensions, the image dimensions, the device
+       screen resolution
+     + retina displays have twice as many pixels per inch, so each pixel is 4 standard kpixels (image needs to be
+       twice as big) (numbers can vary)
+     + it is recommended to stick to the 1x and 2x version of srcset for images less than 600px wide, and use
+       srcset plus sizes method for bigger photos, reserve picture for when youre trying to do something real fancy -->
 <html lang='en'>
     <head>
         <meta charset='UTF-8'/>
@@ -20,12 +26,51 @@
     <body>
         <div class='page'>
             <div class='section menu'></div>
-            <div class='section header'>
-                <img src='images/header.svg'/>
+            <div class='section header'> <!-- 2000w -> photo is 2000 pixels wide -->
+                <!-- vw stands for viewport width -->
+                <!-- ONE METHOD FOR OPTIMIZING PHOTOS -->
+                <!--<div class='illustration'>-->
+                    <!--<img src='illustration-small.png'-->
+                         <!--srcset='images/illustration-small.png 1x,-->
+               <!--images/illustration-big.png 2x'-->
+                         <!--style='max-width: 500px'/>-->
+                <!--</div>-->
+                <!-- ONE METHOD OF RESIZING PHOTOS FOR OPTIMIZATION -->
+                <!--<div class='photo'>-->
+                    <!--<div class='section header'>-->
+                        <!--<div class='photo'>-->
+                            <!--<img src='images/photo-small.jpg'-->
+                                 <!--srcset='images/photo-big.jpg 2000w,-->
+                 <!--images/photo-small.jpg 1000w'-->
+                                 <!--sizes='(min-width: 960px) 960px,-->
+                <!--100vw'/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!-- in each source element the media attribute defines when the image should be loaded and srcset
+                    defines which image file should be loaded, but doesn't let the browser automatically pick the
+                     optimal image (retina optimization is lost) -->
+                    <picture>
+                        <source media='(min-width: 401px)'
+                                srcset='images/photo-big.jpg'/>
+                        <source media='(max-width: 400px)'
+                                srcset='images/photo-tall.jpg'/>
+                        <img src='images/photo-small.jpg'/>
+                    </picture>
             </div>
             <div class='section content'>
-                <img src='images/content.svg'/>
+                <!-- without wrapping the image in a div container, flexbox would try to set its height to be the same
+                as the .content container -->
+                <div class='illustration'>
+                    <!-- keep src because older browsers don't understand srcset will use it -->
+                    <img src='illustration-small.png'
+                         srcset='images/illustration-small.png 1x,
+               images/illustration-big.png 2x' <!-- srcset attribute points to a list of alternative image files
+                                                    and the properties defining when the browser should use each of
+                                                    them -->
+                         style='max-width: 500px'/>
+                </div>
             </div>
+        </div>
             <div class='section sign-up'>
                 <img src='images/sign-up.svg'/>
             </div>
